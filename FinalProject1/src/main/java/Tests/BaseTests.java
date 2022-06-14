@@ -1,6 +1,7 @@
 
 package Tests;
 
+import Pages.HomePage;
 import Pages.LoginPage;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 @Getter
@@ -17,6 +19,8 @@ public class BaseTests {
     private WebDriverWait driverWait;
 
     private LoginPage loginPage;
+
+    private HomePage homePage;
 
 
     @BeforeClass
@@ -29,6 +33,7 @@ public class BaseTests {
         driver.manage().timeouts().getPageLoadTimeout();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver, driverWait);
+        homePage = new HomePage(driver, driverWait);
     }
 
     @AfterClass

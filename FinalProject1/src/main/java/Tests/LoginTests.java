@@ -13,4 +13,6 @@ public class LoginTests extends BaseTests{
         getLoginPage().clickLoginBtn();
         Assert.assertEquals(getLoginPage().loginCheck(), true);
     }
+
+
 }
