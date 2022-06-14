@@ -4,53 +4,58 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class HomePageCardTests extends BaseTests{
+public class HomePageCardTests extends BaseTests {
     @BeforeMethod
-    public void navigate(){
+    public void navigate() {
         getHomePage().navigateToHomePage();
     }
 
     @Test
-    public void clickElementsCardTest (){
+    public void clickElementsCardTest() {
 
         getHomePage().getElementsCard();
         getHomePage().clickElementsCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
+
     @Test
-    public void clickFormsCardTest (){
+    public void clickFormsCardTest() {
 
         getHomePage().getFormsCard();
         getHomePage().clickFormsCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
+
     @Test
-    public void clickAlertsCardTest (){
+    public void clickAlertsCardTest() {
 
         getHomePage().getAlertsCard();
         getHomePage().clickAlertsCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
+
     @Test
-    public void clickWidgetsCardTest (){
+    public void clickWidgetsCardTest() {
 
         getHomePage().getWidgetsCard();
         getHomePage().clickWidgetsCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
+
     @Test
-    public void clickInteractionsCardTest (){
+    public void clickInteractionsCardTest() {
 
         getHomePage().getInteractionsCard();
         getHomePage().clickInteractionsCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
+
     @Test
-    public void clickBookStoreCardTest (){
+    public void clickBookStoreCardTest() {
 
         getHomePage().getBookStoreCard();
         getHomePage().clickBookStoreCard();
-        Assert.assertEquals(getHomePage().clickCheck(),true);
+        Assert.assertEquals(getHomePage().clickCheck(), true);
     }
 
 }

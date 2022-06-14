@@ -1,6 +1,7 @@
 
 package Tests;
 
+import Pages.BookStorePage;
 import Pages.HomePage;
 import Pages.LoginPage;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
+
 @Getter
 public class BaseTests {
     private WebDriver driver;
@@ -21,6 +23,8 @@ public class BaseTests {
     private LoginPage loginPage;
 
     private HomePage homePage;
+
+    private BookStorePage bookStorePage;
 
 
     @BeforeClass
@@ -34,11 +38,12 @@ public class BaseTests {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver, driverWait);
         homePage = new HomePage(driver, driverWait);
+        bookStorePage = new BookStorePage(driver, driverWait);
     }
 
     @AfterClass
 
-    public void driverClose (){
+    public void driverClose() {
         driver.close();
     }
 }

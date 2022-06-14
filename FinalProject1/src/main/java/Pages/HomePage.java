@@ -4,15 +4,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 @NoArgsConstructor
 @Getter
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
 
     private By elementsCard = By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[1]");
@@ -26,76 +24,79 @@ public class HomePage extends BasePage{
         super(driver, driverWait);
     }
 
-    public void navigateToHomePage(){
+    public void navigateToHomePage() {
         getDriver().navigate().to("https://demoqa.com/");
         getDriver().manage().window().maximize();
     }
-    public WebElement getElementsCard(){
+
+    public WebElement getElementsCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(elementsCard);
     }
 
-    public void clickElementsCard(){
+    public void clickElementsCard() {
         getElementsCard().click();
     }
-    public WebElement getFormsCard(){
+
+    public WebElement getFormsCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(formsCard);
     }
 
-    public void clickFormsCard(){
+    public void clickFormsCard() {
         getFormsCard().click();
     }
-    public WebElement getAlertsCard(){
+
+    public WebElement getAlertsCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(alertsCard);
     }
 
-    public void clickAlertsCard(){
+    public void clickAlertsCard() {
         getAlertsCard().click();
     }
 
-    public WebElement getWidgetsCard(){
+    public WebElement getWidgetsCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(widgetsCard);
     }
 
-    public void clickWidgetsCard(){
+    public void clickWidgetsCard() {
         getWidgetsCard().click();
     }
 
-    public WebElement getInteractionsCard(){
+    public WebElement getInteractionsCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(interactionsCard);
     }
 
-    public void clickInteractionsCard(){
+    public void clickInteractionsCard() {
         getInteractionsCard().click();
     }
-    public WebElement getBookStoreCard(){
+
+    public WebElement getBookStoreCard() {
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Actions scrollDown = new Actions(getDriver());
         scrollDown.sendKeys(Keys.PAGE_DOWN).build().perform();
         return getDriver().findElement(interactionsCard);
     }
 
-    public void clickBookStoreCard(){
+    public void clickBookStoreCard() {
         getBookStoreCard().click();
     }
 
 
-
-    public boolean clickCheck (){
+    public boolean clickCheck() {
         return getDriver().findElement(By.xpath("//*[@id=\"app\"]")).isDisplayed();
     }
 }

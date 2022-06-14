@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @NoArgsConstructor
 @Getter
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private By userName = By.xpath("//*[@id=\"userName\"]");
     private By password = By.xpath("//*[@id=\"password\"]");
@@ -20,21 +20,21 @@ public class LoginPage extends BasePage{
         super(driver, driverWait);
     }
 
-    public void navigateToLoginPage(){
+    public void navigateToLoginPage() {
         getDriver().navigate().to("https://demoqa.com/login");
         getDriver().manage().window().maximize();
     }
 
-    public void inputFields (String username, String password){
+    public void inputFields(String username, String password) {
         getDriver().findElement(this.userName).sendKeys(username);
         getDriver().findElement(this.password).sendKeys(password);
     }
 
-    public void clickLoginBtn (){
+    public void clickLoginBtn() {
         getDriver().findElement(this.loginBtn).click();
     }
 
-    public boolean loginCheck (){
+    public boolean loginCheck() {
         return getDriver().findElement(By.xpath("//*[@id=\"submit\"]")).isDisplayed();
     }
 

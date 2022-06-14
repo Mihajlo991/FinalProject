@@ -3,16 +3,14 @@ package Tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTests {
+public class BookStoreTests extends BaseTests{
 
     @Test
-
-    public void loginTestHappyFlow() {
+    public void bookStoreIsPresentTest (){
         getLoginPage().navigateToLoginPage();
         getLoginPage().inputFields("MVarga021", "aAaA0!!!");
         getLoginPage().clickLoginBtn();
-        Assert.assertEquals(getLoginPage().loginCheck(), true);
+        getBookStorePage().navigateToBookStore();
+        Assert.assertEquals(getBookStorePage().navigationCheck(), true);
     }
-
-
 }
