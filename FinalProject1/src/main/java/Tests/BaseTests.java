@@ -2,6 +2,7 @@
 package Tests;
 
 import Pages.BookStorePage;
+import Pages.ElementsCard;
 import Pages.HomePage;
 import Pages.LoginPage;
 import lombok.Getter;
@@ -27,6 +28,8 @@ public class BaseTests {
 
     private BookStorePage bookStorePage;
 
+    private ElementsCard elementsCard;
+
 
     @BeforeClass
 
@@ -40,6 +43,7 @@ public class BaseTests {
         loginPage = new LoginPage(driver, driverWait);
         homePage = new HomePage(driver, driverWait);
         bookStorePage = new BookStorePage(driver, driverWait);
+        elementsCard = new ElementsCard(driver, driverWait);
     }
 
     @AfterClass
