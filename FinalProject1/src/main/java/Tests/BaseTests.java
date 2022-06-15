@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -33,7 +34,7 @@ public class BaseTests {
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tijana\\Desktop\\Kurs\\chromedriver.exe");
         driver = new ChromeDriver();
-        driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().timeouts().getPageLoadTimeout();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver, driverWait);
