@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +34,7 @@ public class LoginPage extends BasePage {
     public void inputFields(String username, String password) {
         getDriver().findElement(this.userName).sendKeys(username);
         getDriver().findElement(this.password).sendKeys(password);
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
         getDriver().findElement(this.password).sendKeys(Keys.ENTER);
     }
 
@@ -49,9 +50,10 @@ public class LoginPage extends BasePage {
         return getDriver().findElement(By.xpath("//*[@id=\"submit\"]")).isDisplayed();
     }
 
-    public void logout (){
+    public void logout() {
         getDriver().findElement(this.logoutBtn).click();
     }
+
     public String logoutCheck() {
         return getDriver().findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]")).getText();
     }

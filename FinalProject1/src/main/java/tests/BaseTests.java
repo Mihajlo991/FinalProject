@@ -1,18 +1,19 @@
 
-package Tests;
+package tests;
 
-import Pages.BookStorePage;
-import Pages.ElementsCard;
-import Pages.HomePage;
-import Pages.LoginPage;
+import pages.BookStorePage;
+import pages.HomePage;
+import pages.LoginPage;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import pages.elementsCard.Buttons;
+import pages.elementsCard.CheckBox;
+import pages.elementsCard.RadioButtons;
+import pages.elementsCard.TextBox;
 
 import java.time.Duration;
 
@@ -28,8 +29,13 @@ public class BaseTests {
 
     private BookStorePage bookStorePage;
 
-    private ElementsCard elementsCard;
+    private CheckBox checkBox;
 
+    private TextBox textBox;
+
+    private RadioButtons radioButtons;
+
+    private Buttons buttons;
 
     @BeforeClass
 
@@ -43,7 +49,11 @@ public class BaseTests {
         loginPage = new LoginPage(driver, driverWait);
         homePage = new HomePage(driver, driverWait);
         bookStorePage = new BookStorePage(driver, driverWait);
-        elementsCard = new ElementsCard(driver, driverWait);
+        checkBox = new CheckBox(driver, driverWait);
+        textBox = new TextBox(driver, driverWait);
+        radioButtons = new RadioButtons(driver, driverWait);
+        buttons = new Buttons(driver, driverWait);
+
     }
 
     @AfterClass
