@@ -109,4 +109,27 @@ public class ElementsCardTests extends BaseTests {
         Assert.assertEquals(msg, "You have done a dynamic click");
     }
 
+    @Test
+    public void newTabTest1(){
+        getLinks().navigateToElementsCard();
+        getLinks().navigateToLinksCard();
+        getLinks().clickNewTabButton1();
+        Assert.assertTrue(getLinks().newTabOpen());
+    }
+
+    @Test
+    public void newTabTest2(){
+        getLinks().navigateToElementsCard();
+        getLinks().navigateToLinksCard();
+        getLinks().clickNewTabButton2();
+        Assert.assertTrue(getLinks().newTabOpen());
+    }
+
+    @Test
+    public void createdLink (){
+        getLinks().navigateToElementsCard();
+        getLinks().navigateToLinksCard();
+        getLinks().clickCreated();
+        Assert.assertEquals(getLinks().assertCreated(), "Link has responded with staus 201 and status text Created");
+    }
 }

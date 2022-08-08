@@ -10,10 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.elementsCard.Buttons;
-import pages.elementsCard.CheckBox;
-import pages.elementsCard.RadioButtons;
-import pages.elementsCard.TextBox;
+import pages.elementsCard.*;
 
 import java.time.Duration;
 
@@ -37,6 +34,8 @@ public class BaseTests {
 
     private Buttons buttons;
 
+    private Links links;
+
     @BeforeClass
 
 
@@ -53,6 +52,7 @@ public class BaseTests {
         textBox = new TextBox(driver, driverWait);
         radioButtons = new RadioButtons(driver, driverWait);
         buttons = new Buttons(driver, driverWait);
+        links = new Links(driver, driverWait);
 
     }
 
